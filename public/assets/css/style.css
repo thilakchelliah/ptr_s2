@@ -1,0 +1,272 @@
+/*-------------Common Styles ------------------------*/
+
+.marTop10 {
+    margin-top: 10px;
+}
+
+.marleft23 {
+    margin-left: 23%;
+}
+
+.padleft10 {
+    padding-left: 10px;
+}
+
+.padright10 {
+    padding-right: 10px;
+}
+
+
+.navbar {
+    background-color: #009EFF;
+    border-radius: 0px !important;
+    color: #fff;
+}
+
+.navbar-nav .nav-link {
+    color: #FFF !important;
+}
+
+.navbar .nav>li>.dropdown-menu:before {
+    position: absolute;
+    top: -7px;
+    left: 9px;
+    display: inline-block;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #ccc;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    content: '';
+}
+
+.navbar .nav>li>.dropdown-menu:after {
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    display: inline-block;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #ffffff;
+    border-left: 6px solid transparent;
+    content: '';
+}
+
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+/*=========================
+  Footer
+ ================= */
+
+footer {
+    background: #009EFF;
+}
+
+.inner-footer ul li,
+a {
+    list-style: none;
+}
+
+.widgetheading {
+    color: #FFF;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.f-about a h1 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #FFF;
+}
+
+.f-about a h1 span {
+    color: #FFF;
+}
+
+.f-about p {
+    font-size: 14px;
+    color: #FFF;
+
+}
+
+.l-posts h3 {
+    margin-left: 40px;
+}
+
+.l-posts li a {
+    font-size: 14px;
+    color: #FFF;
+    margin: 0;
+    font-weight: 300;
+    border-bottom: 1px solid #f6f6f6;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.l-posts li a:hover {
+    color: #FFF;
+}
+
+.f-contact p {
+    font-size: 14px;
+    color: #FFF;
+    margin: 0;
+
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.f-contact i {
+    color: #FFF;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.f-contact a:hover p {
+    color: #FFF;
+}
+
+.last-div {
+    margin-top: 40px;
+    background: #284B5F;
+    padding: 20px 0;
+    position: relative;
+}
+
+.copyright {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 300;
+    float: left;
+}
+
+.copyright a {
+    color: #FFF;
+    cursor:pointer;
+}
+
+.copyright a:hover {
+    text-decoration: none;
+    color: #73f4fc;
+}
+
+ul.social-network {
+    list-style: none;
+    margin-top: 15px;
+    float: right;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+ul.social-network li {
+    display: inline;
+    margin: 0 15px;
+    color: #73f4fc;
+}
+
+ul.social-network li a {
+    color: #fff;
+}
+
+ul.social-network li a:hover {
+    color: #73f4fc;
+}
+
+a.scrollup {
+    color: #fff;
+    height: 55px;
+    width: 55px;
+    font-size: 22px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 15px;
+    right: 40px;
+    opacity: 0, 5;
+    border-radius: 50%;
+    z-index: 999;
+}
+
+a.scrollup:hover {
+    opacity: 1;
+    background-color: #36CBD4;
+    color: #fff;
+    ;
+}
+
+/*-------------Blog card Style-------------------*/
+
+.blog-card {
+    margin-top: 20px;
+}
+
+
+
+.dashboardNav {
+    display: list-item;
+    padding-left: 40px;
+}
+
+/*-------------Tagger styles -------------------*/
+
+.tag-input-ctn {
+    border: 1px solid #ccc;
+    padding: 2px 3px;
+    display: inline-block;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tag-input-ctn input {
+    display: inline-block;
+    float: left;
+    height: 18px;
+    padding: 0px;
+    font-size: 13px;
+    line-height: 18px;
+    color: black;
+    border: 0px;
+    margin: 2px;
+}
+
+.tag-input-ctn input:focus {
+    outline: 0;
+    box-shadow: 0px;
+}
+
+.tag-input-ctn .input-tag {
+    padding: 2px 4px;
+    line-height: 12px;
+    font-size: 11px;
+    background-color: #e3eaf6;
+    display: inline-block;
+    float: left;
+    border-radius: 2px;
+    margin: 2px 5px 2px 0px;
+    border: 1px solid #a9b6d2;
+}
+
+.tag-input-ctn .input-tag .delete-tag {
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0px 2px;
+}
+
+.tag-input-ctn .input-tag .delete-tag:hover {
+    background-color: #96b4d2;
+}

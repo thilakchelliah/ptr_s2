@@ -1,0 +1,274 @@
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+.abel-font *{
+  font-family: 'Abel', sans-serif !important;
+  font-size:18px !important; 
+  line-height:1.5 !important;
+}
+
+/* Absolute Center Spinner */
+.loading {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Transparent Overlay */
+.loading:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* :not(:required) hides these rules from IE9 and below */
+.loading:not(:required) {
+  /* hide "loading..." text */
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.loading:not(:required):after {
+  content: '';
+  display: block;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  margin-top: -0.5em;
+  -webkit-animation: spinner 1500ms infinite linear;
+  -moz-animation: spinner 1500ms infinite linear;
+  -ms-animation: spinner 1500ms infinite linear;
+  -o-animation: spinner 1500ms infinite linear;
+  animation: spinner 1500ms infinite linear;
+  border-radius: 0.5em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+  box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+}
+
+/* Animation */
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.card{
+    margin:15px 0 15px 0 ;
+}
+.blogTitleSpan{
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+}
+.card-footer{
+    background-color: #FFF !important;
+}
+.blogRelat{
+    color: grey;
+    font-size: small;
+}
+.card-profile {
+  width: 250px !important;
+  margin: 50px auto;
+  background-color: #e6e5e1;
+  border-radius: 0;
+  border: 0;
+  -webkit-box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2);
+          box-shadow: 1em 1em 2em rgba(0, 0, 0, 0.2);
+}
+.card-profile .card-img-top {
+  border-radius: 0;
+}
+
+.card-profile .card-img-profile {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-top: -70px;
+  border: 5px solid #e6e5e1;
+}
+
+.card-profile .card-title small {
+  display: block;
+  font-size: .6em;
+  margin-top: .2em;
+}
+
+.card-profile .card-links .fa {
+  margin: 0 0.5em;
+  font-size: 1.6em;
+}
+.card-profile .card-links .fa:focus, .card-profile .card-links .fa:hover {
+  text-decoration: none;
+}
+.card-profile .card-links .fa.fa-dribbble {
+  color: #ea4b89;
+  font-weight: bold;
+}
+.card-profile .card-links .fa.fa-dribbble:hover {
+  color: #e51d6b;
+}
+.card-profile .card-links .fa.fa-twitter {
+  color: #68aade;
+}
+.card-profile .card-links .fa.fa-twitter:hover {
+  color: #3e92d5;
+}
+.card-profile .card-links .fa.fa-facebook {
+  color: #3b5999;
+}
+.card-profile .card-links .fa.fa-facebook:hover {
+  color: #2d4474;
+}
+
+/*----------------tag related--------------------*/
+.tags {
+  list-style: none;
+  margin: 0;
+  overflow: hidden; 
+  padding: 0;
+}
+
+.tags li {
+  float: left; 
+}
+.tags li a{
+ text-decoration: none; 
+}
+
+.tag {
+  background: #75C13E;
+  border-radius: 3px 0 0 3px;
+  color: #FFF;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+}
+
+.tag::before {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+  content: '';
+  height: 6px;
+  left: 10px;
+  position: absolute;
+  width: 6px;
+  top: 10px;
+}
+
+.tag::after {
+  background: #fff;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #75C13E;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.tag:hover {
+  background-color: crimson;
+  color: white;
+}
+
+.tag:hover::after {
+   border-left-color: crimson; 
+}
+
+.log-arrow-up {
+    background: url("../images/arrow-up.png") no-repeat;
+    width: 20px;
+    height: 11px;
+    position: absolute;
+    right: 20px;
+    top: -10px;
+}
+.eborder-top {
+    border-top: 2px solid #007AFF !important;
+}
+.ModalPreviewCls .modal-dialog{
+  max-width:700px !important;
+}
+
