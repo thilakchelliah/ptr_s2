@@ -1,3 +1,4 @@
+var fallback = require('express-history-api-fallback')
 var express = require('express') ;
 var path = require('path');
 var logger = require('morgan');
@@ -14,8 +15,9 @@ var jwt = require('jsonwebtoken');
 //var localport = process.env.PORT != undefined ? process.env.PORT : 4500;
 
 
-var localport = process.env.PORT || 8080
-var localIp = process.env.IP || '127.0.0.1'
+var localport = process.env.PORT || 4200
+var localIp = process.env.IP ||"0.0.0.0"
+// '0.0.0.0'
 console.log(localIp);
 console.log(localport);
 
@@ -37,6 +39,8 @@ var storage = multer.diskStorage({
 global.multerUpload = multer({ storage: storage });
 
 
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
 mongoose.connect("mongodb://thilaktest:test123@ds143070.mlab.com:43070/tech_registry_db",{ useNewUrlParser: true }, function (err, db) {
   if (err) {
     return console.dir(err);
@@ -68,12 +72,27 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use('/api', apiRouteOpen);
-app.use('/apiS', middleWare, apiRouteSecured);
+//var root = __dirname + '/public'
+//app.use(express.static(root))
+//app.use(fallback('index.html', { root: root }))
 
-app.get('*', function(req, res) {
-       res.sendFile(path.join(__dirname + 'public/index.html'));
-    });
+
+
+
+app.get('*', function(req, res, next) {
+  if (req.url === '/' || req.url === '/admin'){
+	  res.sendFile(path.join(__dirname, 'public/index.html'));
+  }
+	else if(req.url === "/api"){
+		app.use('/api', apiRouteOpen);
+	}
+	else if(req.url === "/apiS"){
+		app.use('/apiS', middleWare, apiRouteSecured);
+}
+ 
+});
+
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -99,3 +118,5 @@ app.listen(localport);
 
 console.log('Server running at ' + localIp + ':' + localport);
 module.exports = app;
+
+;

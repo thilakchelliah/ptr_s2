@@ -13,6 +13,9 @@ var BlogPostSchema = new mongoose.Schema({
     tagData: {
         type: String,
     },
+    blogPic: {
+        type: String,
+    },
     urlId:{
         type:String
     },
