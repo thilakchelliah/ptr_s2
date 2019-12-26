@@ -78,19 +78,8 @@ app.use(function(req, res, next) {
 
 
 
-
-app.get('*', function(req, res, next) {
-  if (req.url === '/' || req.url === '/admin'){
-	  res.sendFile(path.join(__dirname, 'public/index.html'));
-  }
-	else if(req.url === "/api"){
-		app.use('/api', apiRouteOpen);
-	}
-	else if(req.url === "/apiS"){
-		app.use('/apiS', middleWare, apiRouteSecured);
-}
- 
-});
+app.use('/api', apiRouteOpen);
+app.use('/apiS', middleWare, apiRouteSecured);
 
 
 
