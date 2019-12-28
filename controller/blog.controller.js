@@ -2,7 +2,11 @@ var mongoose = require('mongoose'),
     BlogPost = mongoose.model('BlogPost'),
     Jimp = require('jimp');
 
+<<<<<<< HEAD
 exports.AddBlogPost = async function (req, res) {
+=======
+exports.AddBlogPost = function (req, res) {
+>>>>>>> 7bfb2bab0ad1d29f7ea50e344a353134afb9eead
     if (!req.body.title) {
         res.status(400).send({ message: "Title cannot be Empty" });
     }
@@ -25,14 +29,22 @@ exports.AddBlogPost = async function (req, res) {
             title: req.body.title,
             htmlString: req.body.htmlContent,
             user: req.body.userId,
+<<<<<<< HEAD
             blogPic: imgData,
+=======
+            blogPic: req.body.blogPic,
+>>>>>>> 7bfb2bab0ad1d29f7ea50e344a353134afb9eead
             tagData: req.body.tagData,
             urlId: (new Date().valueOf()).toString(36),
             previewText: req.body.previewText,
             createdDate: new Date().toDateString(),
             updatedDate: new Date().toDateString()
         });
+<<<<<<< HEAD
         console.log(BlogPostData);
+=======
+
+>>>>>>> 7bfb2bab0ad1d29f7ea50e344a353134afb9eead
         BlogPostData.save(function (err, data) {
             console.log(data);
             if (err) {
