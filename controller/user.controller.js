@@ -1,9 +1,9 @@
 var mongoose = require('mongoose'),
-    bcrypt = require('bcryptjs');
+    bcrypt = require('bcryptjs'),
     jwt = require('jsonwebtoken'),
     User = mongoose.model('User');
 
-exports.CreateUser = function(req, res) {
+exports.CreateUser = function (req, res) {
     if (!req.body.username) {
         res.status(400).send({ message: "Username cannot be empty" });
     }
@@ -17,7 +17,7 @@ exports.CreateUser = function(req, res) {
             updatedDate: new Date().toDateString()
         });
 
-        userCurrent.save(function(err, data) {
+        userCurrent.save(function (err, data) {
             console.log(data);
             if (err) {
                 console.log(err);
@@ -33,8 +33,8 @@ exports.CreateUser = function(req, res) {
 
 //validators
 
-exports.CheckIfUserNameExist = function(req, res) {
-    User.find({ username: req.query.userName }, function(err, user) {
+exports.CheckIfUserNameExist = function (req, res) {
+    User.find({ username: req.query.userName }, function (err, user) {
         if (err) {
             res.send(err);
         }
@@ -46,8 +46,8 @@ exports.CheckIfUserNameExist = function(req, res) {
     });
 };
 
-exports.checkIfEmailExist = function(req, res) {
-    User.find({ email: req.query.email }, function(err, email) {
+exports.checkIfEmailExist = function (req, res) {
+    User.find({ email: req.query.email }, function (err, email) {
         if (err) {
             res.send(err);
         }
@@ -59,9 +59,9 @@ exports.checkIfEmailExist = function(req, res) {
     });
 };
 
-exports.CheckSignUpCred = function(req, res) {
+exports.CheckSignUpCred = function (req, res) {
 
-    User.find({ username: req.query.username }).lean().exec(function(err, user) {
+    User.find({ username: req.query.username }).lean().exec(function (err, user) {
         if (err) {
             res.send({ result: "Error", message: err });
         }
@@ -84,8 +84,8 @@ exports.CheckSignUpCred = function(req, res) {
 };
 
 
-exports.GetUserData = function(req, res) {
-    User.find({}, function(err, userData) {
+exports.GetUserData = function (req, res) {
+    User.find({}, function (err, userData) {
         if (err) {
             res.send(err);
         }
@@ -93,5 +93,22 @@ exports.GetUserData = function(req, res) {
         else
             res.json(userData);
     });
+
+};
+
+exports.VerifyJwtToken = function (req, res) {
+    if (!req.body.token) {
+        res.status(400).send({ message: "Token cannot be empty" });
+    }
+    else {
+        jwt.verify(req.body.token, global.config.jwt_secret, function (err, decoded) {
+            if (err) { //failed verification.
+                return res.status(401).send({ "error": true, ErrObj: err });
+            }
+            else
+                return res.send({ message: "valid" });
+
+        });
+    }
 
 };

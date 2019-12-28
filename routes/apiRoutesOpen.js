@@ -12,6 +12,8 @@ router.post('/User/Create', userController.CreateUser);
 router.get('/User/checkUser', userController.CheckIfUserNameExist);
 router.get('/User/checkEmail', userController.checkIfEmailExist);
 router.get('/User/CheckSignUpCred', userController.CheckSignUpCred);
+router.post('/User/verifyJwtToken', userController.VerifyJwtToken);
+
 
 router.get('/Blog/FetchAll', blogController.GetAllBlogPost);
 router.get('/Blog/FetchOne', blogController.GetOneBlogPost);
