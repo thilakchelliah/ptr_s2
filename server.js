@@ -41,7 +41,10 @@ global.multerUpload = multer({ storage: storage });
 
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
-mongoose.connect("mongodb://thilaktest:test123@ds143070.mlab.com:43070/tech_registry_db", { useNewUrlParser: true }, function (err, db) {
+mongoose.connect("mongodb://thilaktest:test123@ds143070.mlab.com:43070/tech_registry_db", {
+  useUnifiedTopology: true,
+  useNewUrlParser: true
+}, function (err, db) {
   if (err) {
     return console.dir(err);
   }
@@ -66,16 +69,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// app.use(function (req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//   next();
-// });
-
-//var root = __dirname + '/public'
-//app.use(express.static(root))
-//app.use(fallback('index.html', { root: root }))
 
 
 app.use('/api', apiRouteOpen);
