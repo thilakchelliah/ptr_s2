@@ -11,13 +11,13 @@ var cors = require('cors')
 
 global.config = require('./config');
 var jwt = require('jsonwebtoken');
-//var localIp = process.env.IP != undefined ? process.env.IP : "localhost";
-//var localport = process.env.PORT != undefined ? process.env.PORT : 4500;
+var localIp = process.env.IP != undefined ? process.env.IP : "0.0.0.0";
+var localport = process.env.PORT != undefined ? process.env.PORT : 4500;
 
 
-var localport = process.env.PORT || 4500;
+//var localport = process.env.PORT || 4500;
 
-var localIp = process.env.IP || "localhost";
+//var localIp = process.env.IP || "localhost";
 console.log(localIp);
 console.log(localport);
 
