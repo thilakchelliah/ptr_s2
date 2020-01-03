@@ -1,5 +1,6 @@
 var mongoose = require('mongoose'),
     BlogPost = mongoose.model('BlogPost'),
+    TagData = mongoose.model('TagData'),
     Jimp = require('jimp');
 
 exports.AddBlogPost = async function (req, res) {
@@ -116,4 +117,29 @@ exports.GetOneBlogPost = function (req, res) {
                 res.json(BlogPost);
         });
 
+};
+
+exports.AddTag = async function (req, res) {
+    if (!req.body.tag) {
+        res.status(400).send({ message: "Tag cannot be Empty" });
+    }
+    else {
+
+        var tagData = new TagData({
+            name: req.body.tag,
+            createdDate: new Date().toDateString(),
+            updatedDate: new Date().toDateString()
+        });
+        console.log(tagData);
+        tagData.save(function (err, data) {
+            console.log(data);
+            if (err) {
+                console.log(err);
+                res.status(500).send({ message: "Some error occurred while creating the tag." });
+            }
+            else {
+                res.send(data);
+            }
+        });
+    }
 };
