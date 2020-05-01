@@ -23,7 +23,7 @@ router.get('/Blog/FetchAll', blogController.GetAllBlogPost);
 //Tutorial Manager
 router.post('/Tutorial/Create', tutorialController.AddTutorial);
 router.get('/Tutorial/FetchAll', tutorialController.GetAllTutorial);
-router.post('/Tutorial/FileUpload', global.multerUpload.any(), tutorialController.uploadTutorialFile);
+router.post('/Tutorial/Update', tutorialController.UpdateTutorial);
 router.post('/Tutorial/Delete', tutorialController.DeleteTutorialPost);
 
 
