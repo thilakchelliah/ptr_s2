@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+require("../models/TagData");
 require("../models/user");
 require("../models/BlogPost");
 require("../models/tutorial");
